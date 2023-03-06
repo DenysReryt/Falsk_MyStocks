@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks for User</title>
+</head>
+<body>
+{% for stock in stocks %}
+<h1>List of Stocks for User {{user.id}}</h1>
+<button class="add">Buy stocks</button>
+<table>
+    <tr>
+        <th>Stock_Id</th>
+        <th>Company</th>
+        <th>Stocks amount</th>
+        <th>Sum ($)</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        <td>{{ stock.id }}</td>
+        <td>{{ stock.company }}</td>
+        <td>{{ stock.stocks_amount }}</td>
+        <td>{{ stock.sum }}</td>
+        <td>
+            <button>Sell stock</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<p><a href="{{ url_for('home') }}">Home</a></p>
+<p><a href="{{ url_for('users') }}">List of Users</a></p>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+
+th, td {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: gray;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+a {
+    text-decoration: none;
+    color: #039be5;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.add {
+  float: right;
+  background-color: #74992e;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+</style>
+</body>
+</html>

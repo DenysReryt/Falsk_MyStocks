@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+</head>
+<body>
+<h1>List of Stocks</h1>
+<button class="add">Add</button>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Company</th>
+        <th>Sector</th>
+        <th>Amount</th>
+        <th>Price ($)</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for stock in stocks %}
+    <tr>
+        <td>{{ stock.code }}</td>
+        <td><a href="{{ url_for('stock', code=loop.index) }}">{{ stock.company }}</a></td>
+        <td>{{ stock.sector }}</td>
+        <td>{{ stock.amount }}</td>
+        <td>{{ stock.price }}</td>
+        <td>
+            <button>Edit</button>
+            <button>Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<p><a href="{{ url_for('home') }}">Home</a></p>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 36px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 16px;
+}
+
+th {
+  background-color: gray;
+}
+
+a {
+  color: #039be5;
+  text-decoration: none;
+}
+
+p {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 18px;
+}
+
+.add {
+  float: right;
+  background-color: #74992e;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+</style>
+</body>
+</html>
+
