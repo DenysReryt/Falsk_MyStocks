@@ -15,8 +15,8 @@ before_script:
 
 script:
   - pylint app/
-  - flask --app=app/ db upgrade --directory app/migrations
-  - coverage run -m pytest tests && coverage report
+  - flask --app=app/main:app db upgrade --directory app/migrations
+  - coverage run -m pytest && coverage report
 
 after_script:
   - pkill gunicorn
