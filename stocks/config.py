@@ -19,7 +19,7 @@ class Settings:
     DB_USER: str = os.getenv('DB_USER')
     DB_NAME: str = os.getenv('DB_NAME')
     DB_HOST: str = os.getenv('DB_HOST')
-    SQLALCHEMY_DATABASE_URL: str = os.getenv('DB_URL')
+    SQLALCHEMY_DATABASE_URI: str = os.getenv('DB_URL')
 
     def __init__(self):
         pass
