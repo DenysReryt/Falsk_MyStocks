@@ -15,7 +15,7 @@ migrate.init_app(app, db)
 
 
 # # create the tables
-# with stocks.app_context():
+# with app.app_context():
 #     db.create_all()
 
 @app.route('/')
