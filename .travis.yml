@@ -1,0 +1,24 @@
+language: python
+python:
+  - "3.8"
+services:
+  - mysql
+env:
+  - DATABASE_URL=mysql://$DB_USER:$DB_PASSWORD@$DB_HOST/$DB_NAME
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS db;'
+  - gunicorn -w 4 stocks.main:app -b 127.0.0.1:5000 -D
+  - ps ax|grep gunicorn
+
+script:
+  - pylint stocks/
+  - flask --app=stocks.main:app  db upgrade --directory stocks/migrations
+  - coverage run -m pytest && coverage report
+
+after_script:
+  - pkill gunicorn
+  - ps ax|grep gunicorn
+
