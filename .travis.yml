@@ -15,7 +15,7 @@ before_script:
 
 script:
   - pylint stocks/
-  - flask --app stocks run db upgrade --directory stocks/migrations
+  - flask --app=stocks run db upgrade --directory stocks/migrations
   - coverage run -m pytest && coverage report
 
 after_script:
