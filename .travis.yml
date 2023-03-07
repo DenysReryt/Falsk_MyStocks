@@ -5,11 +5,15 @@ services:
   - mysql
 env:
   - MYSQL_DATABASE=my_stocks_db MYSQL_USER=root MYSQL_PASSWORD=password MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST/$MYSQL_DATABASE
+before_install:
+  - echo $MYSQL_USER
+  - echo $MYSQL_PASSWORD
+  - echo $MYSQL_HOST
 install:
   - pip install -r requirements.txt
 
 before_script:
-  - mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST -e 'CREATE DATABASE IF NOT EXISTS db;'
+  - mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h$MYSQL_HOST -e 'CREATE DATABASE IF NOT EXISTS my_stocks_db;'
   - gunicorn -w 4 stocks.main:app -b 127.0.0.1:5000 -D
   - ps ax|grep gunicorn
 
