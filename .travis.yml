@@ -4,11 +4,11 @@ python:
 services:
   - mysql
 env:
-  - MYSQL_DATABASE=my_stocks_db MYSQL_USER=root MYSQL_PASSWORD=password MYSQL_HOST=127.0.0.1 DATABASE_URL=mysql://$MYSQL_USER:$MYSQL_PASSWORD@$MYSQL_HOST/$MYSQL_DATABASE
+  - DB_NAME=my_stocks_db DB_USER=root DB_PASSWORD=password DB_HOST=localhost DB_URL=mysql://$DB_USER:$DB_PASSWORD@$DB_HOST/$DB_NAME
 before_install:
-  - echo $MYSQL_USER
-  - echo $MYSQL_PASSWORD
-  - echo $MYSQL_HOST
+  - echo $DB_USER
+  - echo $DB_PASSWORD
+  - echo $DB_HOST
 install:
   - pip install -r requirements.txt
 
