@@ -15,6 +15,7 @@ class Settings:
         Class to define application settings.
     """
 
+    DB_PASSWORD: str = os.getenv('DB_PASSWORD')
     DB_USER: str = os.getenv('DB_USER')
     DB_NAME: str = os.getenv('DB_NAME')
     DB_HOST: str = os.getenv('DB_HOST')
