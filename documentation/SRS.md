@@ -17,7 +17,7 @@ Application should provide:
 + Display list of stocks for selected user;
 + Updating list of stocks for selected user (adding, editing, removing);
 + Filtering by price for stocks;
-+ Filtering by sum for list of users for selected stock and for list of stocks for selected user;
++ Filtering by sum for list of stocks for selected user;
 + Filtering by registration date for users.
 
 **Home page:**
@@ -46,8 +46,7 @@ Pic. 1.1 View the stock list
 The list displays the following columns:
 
 + Code - unique auction code;
-+ Company - the company to which the stocks belong, you can click on and go to the page with the information
-  about users who own stocks in the company and the amount of these stocks for each user;
++ Company - the company to which the stocks belong;
 + Sector - the industry in which the company operates;
 + Amount - the number of all stocks of a given company;
 + Price ($) - price for the one stock;
@@ -179,8 +178,8 @@ Pic. 2.1 View of the user list
 The list displays the following columns:
 
 + id - specific code for each user;
-+ First name – user’s first name, you can click on and go to the page with the information about the shares held by
-  this user;
++ First name – user’s first name, you can click on and go to the page with the information about transactions 
+  history for stocks;
 + Last name – user’s last name;
 + Stocks amount - number of stocks owned by this user;
 + Registration date – user’s date registration;
@@ -291,46 +290,9 @@ Constraints for data validation:
 
 Pic. 2.4 Delete user dialog
 
-## 3. Users for a selected stock
+## 3. Stocks for a selected user
 
-### 3.1 Display list of users who own stocks in chosen company
-
-This mode is intended for viewing the user list who own stocks in chosen company.
-
-***Main scenario:***
-
-+ User selects item "List of Stocks";
-+ Then, user clicks on name of company;
-+ Application displays list of users who own stocks in this company.
-
-![List of users who own stocks in selected company](https://www.linkpicture.com/q/1_892.png)
-
-Pic. 3.1 View of the user list
-
-The list displays the following columns:
-
-+ id - user's id;
-+ First name – user’s first name;
-+ Last name – hunter’s last name;
-+ Stocks amount - number of stocks owned by this user;
-+ Sum – sum of stocks amount for each user.
-
-***Filtering by sum:***
-
-+ In the user list for a selected stock view mode, the user sets a sum filter and presses the refresh list
-  button (to the right of the sum entry field);
-+ The application will show the users only for a certain sum of the selected range.
-
-Restrictions:
-
-+ Start sum should be less than end sum;
-+ If start sum is blank, then filtering by end sum only.
-+ If end sum is blank, then filtering by start sum only.
-+ Updating data after selecting the filtering conditions is carried out by pressing the "Refresh" button.
-
-## 4. Stocks for a selected user
-
-### 4.1 Display list of stocks for selected user
+### 3.1 Display list of stocks for selected user
 
 This mode is intended for viewing and editing the stocks for selected user.
 
@@ -342,7 +304,7 @@ This mode is intended for viewing and editing the stocks for selected user.
 
 ![List of Stocks for selected user](https://www.linkpicture.com/q/1_1612.png)
 
-Pic. 4.1 View of the stock list for selected user
+Pic. 3.1 View of the stock list for selected user
 
 The list displays the following columns:
 
@@ -364,7 +326,7 @@ Restrictions:
 + If end sum is blank, then filtering by start sum only.
 + Updating data after selecting the filtering conditions is carried out by pressing the "Refresh" button.
 
-### 4.2 Buy stocks
+### 3.2 Buy stocks
 
 ***Main scenario:***
 
@@ -387,7 +349,7 @@ Restrictions:
 
 ![Buy stocks](https://www.linkpicture.com/q/1_1599.png)
 
-Pic. 4.2 Buy stocks
+Pic. 3.2 Buy stocks
 
 When buying a stocks, the following details are entered:
 
@@ -399,36 +361,25 @@ Constraints for data validation:
 + Company – maximum length of 45 characters;
 + Stocks amount – maximum length of 30 characters.
 
-### 4.3 Sell stock
+### 3.3 Sell stock
 
 ***Main scenario:***
 
 + User clicks the "Sell stock" button in the stock list for selected user view mode;
-+ Application displays form to enter number of stocks to be sold;
-+ User enters data and presses "Sell" button;
-+ If any data is entered incorrectly, incorrect data messages are displayed;
-+ If entered data is valid, then edited data is added to database;
-+ If error occurs, then error message is displaying;
-+ If number of stocks record is successfully edited, then the stock list for selected user with added records
-  is displaying.
++ Application displays confirmation dialog "Please confirm to delete stock";
++ The user confirms the removal of the user;
++ Record is deleted from database;
++ If error occurs, then error message displays;
++ If stock record is successfully deleted, then list of users without deleted records is displaying.
 
 ***Cancel operation scenario:***
 
 + User clicks the "Sell stock" button in the stock list for selected user view mode;
-+ Application displays form to enter number of stocks to be sold;
-+ User enters data and presses "Cancel" button;
++ User presses "Cancel" button;
 + Data don’t save in database, then the stock list for selected user records is displaying to user.
 
-![Sell stock](https://www.linkpicture.com/q/1_1613.png)
+![Sell stock](https://www.linkpicture.com/q/1_1651.png)
 
-Pic. 4.3 Sell stock
+Pic. 3.3 Sell stock
 
-When selling the stock, the following details are entered:
 
-+ Company - the company to which the stocks belong;
-+ Stocks amount - number of stocks in particular company to be purchased;
-
-Constraints for data validation:
-
-+ Company – maximum length of 45 characters;
-+ Stocks amount – maximum length of 30 characters.
