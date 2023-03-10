@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Stock_Id</th>
+        <th>Company</th>
+        <th>Stocks Amount</th>
+        <th>Suma</th>
+    </tr>
+    </thead>
+    {% for stock in response %}
+    <tr>
+        <td>{{ stock.id }}</td>
+        <td>{{ stock.stock_id }}</td>
+        <td>{{ stock.company }}</td>
+        <td>{{ stock.stocks_amount }}</td>
+        <td>{{ stock.suma }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

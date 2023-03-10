@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auction Home Page</title>
+    <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+<h1>Welcome to the "My Stocks" App</h1>
+<p>
+    Please select from the following options:
+</p>
+<ul>
+    <li><a href="{{ url_for('users.list_users') }}">List of Users</a></li>
+    <li><a href="{{ url_for('stocks.list_stocks') }}">List of Stocks</a></li>
+</ul>
+</body>
+</html>
+

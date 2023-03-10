@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+    <link href="static/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>List of Stocks</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissable" role="alert">
+    {{message}}
+    <button type="button" class="close" onclick="this.parentNode.style.display = 'none';">
+        <span aria-hidden="true">X</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form action="{{ url_for('stocks.list_stocks') }}" method="GET">
+    <div class="Filtering">
+      <label for="min_price">Minimum price:</label>
+      <input type="number" id="min_price" name="min_price" class="form-control" min="0" step="0.01">
+      <label for="max_price">Maximum price:</label>
+      <input type="number" id="max_price" name="max_price" class="form-control" min="0" step="0.01">
+      <input type="submit" value="Filter">
+    </div>
+ </form>
+<button onclick="show1('block')" class="add">Add new Stock</button>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Sector</th>
+        <th>Amount</th>
+        <th>Price ($)</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    {% for stock in stocks %}
+    <tr>
+        <td>{{ stock.id }}</td>
+        <td>{{ stock.company }}</td>
+        <td>{{ stock.sector }}</td>
+        <td>{{ stock.amount }}</td>
+        <td>{{ stock.price }}</td>
+        <td>
+            <button onclick="show2('block', {{stock.id}})" class="edit">Edit</button>
+            <button onclick="deleteStock({{ stock.id }})" class="delete">Delete</button>
+            </form>
+            <div onclick="show2('none', {{stock.id}})" id="gray2-{{stock.id}}"></div>
+            <div id="window2-{{stock.id}}">
+                <div class="form">
+                    <h2>Edit Stock</h2>
+                    <form method="POST" action="{{ url_for('stocks.update_stock', stock_id=stock.id) }}">
+                        <label for="amount">The entered number will only be added to the current
+                            amount:</label><br><br>
+                        <input type="number" name="amount" class="input" id="amount" placeholder="Add only" value="0">
+                        <br>
+                        <input type="number" name="price" class="input" id="price" value="{{ stock.price }}"
+                               required step="0.01">
+                        <button type="submit" class="save">Update</button>
+                    </form>
+                </div>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div id="gray1"></div>
+<div id="window1-stock">
+    <div class="form">
+        <h2>Create Stock</h2>
+        <form id="create-form" action="{{ url_for('stocks.create_stock') }}" method="POST">
+            <input type="text" placeholder="Company" name="company" required class="input">
+            <br>
+            <input type="text" placeholder="Sector" name="sector" required class="input">
+            <br>
+            <input type="number" placeholder="Amount" name="amount" required min="100" class="input">
+            <br>
+            <input type="number" placeholder="Price" name="price" required min="10" step="0.01" class="input">
+            <br>
+            <input onclick="show1('none')" type="submit" value="Cancel" class="cancel">
+            <input type="submit" value="Save" class="save">
+        </form>
+    </div>
+</div>
+
+<p><a href="{{ url_for('home') }}">Home</a></p>
+
+<script>
+    function show1(state)
+    {
+        document.getElementById('window1-stock').style.display = state;
+        document.getElementById('gray1').style.display = state;
+    }
+    function show2(state, stockId)
+    {
+        document.getElementById('window2-' + stockId).style.display = state;
+        document.getElementById('gray2-' + stockId).style.display = state;
+    }
+    function deleteStock(stockId) {
+        if (confirm("Are you sure you want to delete stock " + stockId + "?")) {
+            fetch("/stocks/" + stockId, {
+                method: "DELETE"
+            })
+            .then(data => {
+                // Reload the page to update the list of stocks
+                location.reload();
+            })
+            .catch(error => console.error(error));
+        }
+    }
+
+</script>
+</body>
+</html>
