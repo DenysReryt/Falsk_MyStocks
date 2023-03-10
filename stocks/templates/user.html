@@ -86,7 +86,7 @@
         document.getElementById('gray1').style.display = state;
     }
     function deleteStock(userId, stockId, id) {
-        if (confirm("Are you sure you want to delete stock " + id + "?")) {
+        if (confirm("Are you sure you want to sell stock " + id + "?")) {
             fetch("/users/stocks/" + userId + '/' + stockId + '/' + id, {
                 method: "DELETE"
             })

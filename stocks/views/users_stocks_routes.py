@@ -35,7 +35,7 @@ def buy_stock(user_id: int):
 @user_stock_bp.route('/<int:user_id>/<int:stock_id>', methods=['GET'])
 def get_stock(user_id: int, stock_id: int):
     response = requests.get(base_url + f'/{user_id}/{stock_id}').json()
-    return render_template('transactions.html', Response=response)
+    return response
 
 @user_stock_bp.route('/<int:user_id>/<int:stock_id>/<int:id>', methods=['DELETE'])
 def delete_stock(user_id: int, stock_id: int, id: int):
