@@ -23,7 +23,7 @@ api.add_resource(UserListRes, '/api/users')
 api.add_resource(UserRes, '/api/users/<int:user_id>')
 api.add_resource(UserStockListRes, '/api/users/stocks/<int:user_id>')
 api.add_resource(UserStockRes, '/api/users/stocks/<int:user_id>/<int:stock_id>')
-api.add_resource(UserStockDel, '/api/users/stocks/<int:user_id>/<int:stock_id>/<int:id>')
+api.add_resource(UserStockDel, '/api/users/stocks/<int:user_id>/<int:stock_id>/<int:user_stock_id>')
 api.add_resource(StockListRes, '/api/stocks')
 api.add_resource(StockRes, '/api/stocks/<int:stock_id>')
 
