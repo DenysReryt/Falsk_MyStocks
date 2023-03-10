@@ -19,7 +19,7 @@ class User(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     stocks_amount = db.Column(db.Integer, default=0)
-    registration_date = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    registration_date = db.Column(db.DateTime, server_default=func.now())
     phone = db.Column(db.String(15), nullable=False, unique=True)
 
     def to_dict(self):
@@ -60,12 +60,21 @@ class UserStock(db.Model):
     """Model for the 'users_stocks' table."""
 
     __tablename__ = 'users_stocks'
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
-    stock_id = db.Column(db.Integer, db.ForeignKey('stocks.id'), primary_key=True)
+
+    id = db.Column(db.Integer, primary_key=True)
+    stock_id = db.Column(db.Integer, db.ForeignKey('stocks.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    company = db.Column(db.String(50), db.ForeignKey('stocks.company'))
+    stocks_amount = db.Column(db.Integer, nullable=False)
+    suma = db.Column(db.Float(precision=2), nullable=False)
 
     def to_dict(self):
         """Return the model properties as a dictionary."""
         return {
+            'id': self.id,
+            'stock_id': self.stock_id,
             'user_id': self.user_id,
-            'stock_id': self.stock_id
+            'company': self.company,
+            'stocks_amount': self.stocks_amount,
+            'suma': self.suma,
         }
