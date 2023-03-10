@@ -10,7 +10,7 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS my_db;'
+  - mysql -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS my_stocks_db;'
   - gunicorn -w 4 wsgi:app -b localhost:5000 -D
   - ps ax|grep gunicorn
 
