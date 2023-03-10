@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_restful import Api
-from stocks.config import Settings
+from stocks.config import settings
 from stocks.models.models import db, migrate
 from stocks.rest.user_rest import UserRes, UserListRes
 from stocks.rest.stock_rest import StockRes, StockListRes
@@ -10,10 +10,10 @@ from stocks.views.user_routes import user_bp
 from stocks.views.users_stocks_routes import user_stock_bp
 
 app = Flask(__name__)
-app.secret_key = 'Secret Key'
+app.secret_key = settings.SECRET_KEY
 api = Api(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = Settings.SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
@@ -36,7 +36,6 @@ app.register_blueprint(user_stock_bp)
 # with app.app_context():
 #     db.create_all()
 
-# Home page
 @app.route('/')
 def home():
     return render_template('home.html')

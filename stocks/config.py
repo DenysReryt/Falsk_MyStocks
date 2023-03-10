@@ -10,7 +10,7 @@ env_path = Path('..') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 
-class Settings:
+class Settings():
     """
         Class to define application settings.
     """
@@ -21,7 +21,6 @@ class Settings:
     DB_HOST: str = os.getenv('DB_HOST')
     DB_PORT: str = os.getenv('DB_PORT')
     SQLALCHEMY_DATABASE_URI: str = os.getenv('DB_URL')
+    SECRET_KEY: str = os.getenv('SECRET_KEY')
 
-    def __init__(self):
-        pass
-
+settings = Settings()
