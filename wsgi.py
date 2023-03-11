@@ -9,4 +9,4 @@ from stocks.main import app
 if __name__ == '__main__':
     app.run()
 
-# gunicorn -w 4 wsgi:app -b localhost:5000
+# gunicorn -w 4 wsgi:app -b localhost:5000 --log-level debug --reload

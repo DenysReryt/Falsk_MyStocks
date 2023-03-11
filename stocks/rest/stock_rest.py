@@ -1,16 +1,19 @@
+"""Module with RESTful for stocks CRUD"""
 from typing import Tuple, Any, Union, Dict
+import json
 
 from flask_restful import Resource
 from flask import request
-from stocks.service.stock_crud import stock_crud
-import json
 from sqlalchemy.exc import IntegrityError
+
+from stocks.service import stock_crud
 
 
 class StockListRes(Resource):
     """
         Resource class for listing stocks and creating new stocks.
     """
+
     def get(self) -> Tuple[Any, int]:
         """Get a list of all stocks"""
         price_min = request.args.get('price_min')
@@ -39,6 +42,7 @@ class StockRes(Resource):
     """
         Resource class for update get delete specific stocks.
     """
+
     def get(self, stock_id: int) -> Union[Tuple[Dict[str, str], int], Tuple[Any, int]]:
         """Get a stock by ID"""
         stock = stock_crud.get_stock(stock_id=stock_id)

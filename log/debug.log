@@ -1,0 +1,83 @@
+2023-03-11 03:55:39,018 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:55:39,031 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 281
+2023-03-11 03:56:51,433 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:56:51,471 - urllib3.connectionpool - DEBUG - http://localhost:5000 "POST /api/stocks HTTP/1.1" 201 75
+2023-03-11 03:56:51,479 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:56:51,484 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 356
+2023-03-11 03:57:00,747 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:57:00,767 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 356
+2023-03-11 03:57:03,621 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:57:03,642 - urllib3.connectionpool - DEBUG - http://localhost:5000 "DELETE /api/stocks/5 HTTP/1.1" 201 36
+2023-03-11 03:57:03,674 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 03:57:03,688 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:05:41,581 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:41,594 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 450
+2023-03-11 04:05:42,408 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:42,423 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 325
+2023-03-11 04:05:42,424 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:42,427 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:05:44,992 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:45,034 - urllib3.connectionpool - DEBUG - http://localhost:5000 "DELETE /api/users/stocks/1/1/6 HTTP/1.1" 201 36
+2023-03-11 04:05:45,035 - stocks.main - ERROR - Exception on /users/stocks/1/1/6 [DELETE]
+Traceback (most recent call last):
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/PycharmProjects/Falsk (MyStocks)/stocks/views/users_stocks_routes.py", line 47, in delete_stock
+    return redirect(url_for('users_stocks.list_user_stocks'))
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/helpers.py", line 256, in url_for
+    return current_app.url_for(
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'users_stocks.list_user_stocks'. Did you forget to specify values ['user_id']?
+2023-03-11 04:05:45,049 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:45,054 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 214
+2023-03-11 04:05:45,056 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:05:45,061 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:06:30,498 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:30,502 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 450
+2023-03-11 04:06:31,549 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:31,552 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 214
+2023-03-11 04:06:31,553 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:31,556 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:06:44,394 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:44,397 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 103
+2023-03-11 04:06:44,398 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:44,401 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:06:47,207 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:47,211 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 449
+2023-03-11 04:06:51,844 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:51,848 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:06:57,342 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:57,345 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:06:59,912 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:06:59,917 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 449
+2023-03-11 04:07:02,135 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:02,151 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/2 HTTP/1.1" 200 217
+2023-03-11 04:07:02,152 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:02,155 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:07:06,922 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:06,925 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 449
+2023-03-11 04:07:07,910 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:07,914 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/2 HTTP/1.1" 200 217
+2023-03-11 04:07:07,915 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:07,918 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:07:33,835 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:33,839 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/2 HTTP/1.1" 200 106
+2023-03-11 04:07:33,840 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:33,843 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
+2023-03-11 04:07:34,713 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:34,716 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-11 04:07:37,385 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 04:07:37,388 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280

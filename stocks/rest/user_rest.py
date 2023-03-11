@@ -1,11 +1,13 @@
+"""Module with RESTful for users CRUD"""
 from typing import Tuple, Dict, Union, Any, List
+import json
+from datetime import datetime
+from sqlalchemy.exc import IntegrityError
 
 from flask_restful import Resource
 from flask import request
-from stocks.service.user_crud import user_crud
-import json
-from _datetime import datetime
-from sqlalchemy.exc import IntegrityError
+
+from stocks.service import user_crud
 
 
 def json_serializer(obj) -> str:
@@ -20,6 +22,7 @@ class UserListRes(Resource):
     """
         Resource class for listing users and creating new users.
     """
+
     def get(self) -> Tuple[Any, int]:
         """
             Get a list of all users.
@@ -49,6 +52,7 @@ class UserRes(Resource):
     """
         Resource class for update get delete specific user.
     """
+
     def get(self, user_id: int) -> Union[Tuple[Dict[str, str], int], Tuple[List[Any], int]]:
         """
             Get a user by id.

@@ -15,7 +15,7 @@ before_script:
   - ps ax|grep gunicorn
 
 script:
-#  - pylint stocks/
+  - pylint stocks/
   - flask --app=stocks.main:app db upgrade --directory stocks/migrations
 #  - coverage run -m pytest && coverage report
 
