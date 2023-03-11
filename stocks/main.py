@@ -8,6 +8,8 @@ from stocks.rest.users_stocks_rest import UserStockListRes, UserStockRes, UserSt
 from stocks.views.stock_routes import stock_bp
 from stocks.views.user_routes import user_bp
 from stocks.views.users_stocks_routes import user_stock_bp
+import logging
+from logging.handlers import RotatingFileHandler
 
 app = Flask(__name__)
 app.secret_key = settings.SECRET_KEY
@@ -31,10 +33,22 @@ app.register_blueprint(user_bp)
 app.register_blueprint(stock_bp)
 app.register_blueprint(user_stock_bp)
 
+# Set up logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
-# # create the tables
-# with app.app_context():
-#     db.create_all()
+# Set up logging to a file
+handler = RotatingFileHandler('log/debug.log', maxBytes=10000, backupCount=1)
+handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
+# Set up logging to the console
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_handler.setFormatter(formatter)
+
 
 @app.route('/')
 def home():

@@ -41,4 +41,4 @@ def get_stock(user_id: int, stock_id: int):
 def delete_stock(user_id: int, stock_id: int, id: int):
     response = requests.delete(base_url + f'/{user_id}/{stock_id}/{id}')
     flash('Stock deleted successfully.', 'success')
-    return redirect(url_for('user_stocks.list_user_stocks'))
+    return redirect(url_for('users_stocks.list_user_stocks'))

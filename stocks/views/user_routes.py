@@ -21,7 +21,7 @@ def list_users():
 @user_bp.route('/<int:user_id>', methods=['GET'])
 def get_user(user_id: int):
     response = requests.get(base_url + f'/{user_id}').json()
-    return render_template('user.html', users=response)
+    return response
 
 
 # Create new user

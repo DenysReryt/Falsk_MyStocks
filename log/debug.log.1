@@ -1,0 +1,33 @@
+2023-03-11 02:39:06,533 - stocks.main - ERROR - Exception on /users/stocks/1 [GET]
+Traceback (most recent call last):
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/PycharmProjects/Falsk (MyStocks)/stocks/views/users_stocks_routes.py", line 14, in list_user_stocks
+    return render_template('user.html', user_stocks=response, user_id=user_id, stocks=stocks)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: user22.html
+2023-03-11 02:39:09,534 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 02:39:09,548 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 325
+2023-03-11 02:39:09,549 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-11 02:39:09,554 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 280
