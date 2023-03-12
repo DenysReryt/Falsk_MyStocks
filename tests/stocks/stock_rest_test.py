@@ -87,6 +87,7 @@ class TestStockRes(unittest.TestCase):
                 "amount": 1000,
                 "price": 35.55
             }
+
             self.assertEqual(response, expected_json)
             self.assertEqual(status_code, 200)
 

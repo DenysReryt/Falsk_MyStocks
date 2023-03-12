@@ -3,3 +3,17 @@
 2023-03-12 14:10:02,548 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
 2023-03-12 14:10:04,658 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
 2023-03-12 14:10:04,678 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 189
+2023-03-12 14:34:43,674 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:43,688 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 189
+2023-03-12 14:34:50,315 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:50,363 - urllib3.connectionpool - DEBUG - http://localhost:5000 "PUT /api/stocks/1 HTTP/1.1" 200 96
+2023-03-12 14:34:50,369 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:50,381 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 187
+2023-03-12 14:34:52,089 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:52,102 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-12 14:34:52,996 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:53,002 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 323
+2023-03-12 14:34:53,003 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:53,006 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 187
+2023-03-12 14:34:56,771 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 14:34:56,775 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448

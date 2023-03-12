@@ -50,7 +50,7 @@ def update_stock(stock_id: int, amount: Optional[int] = None, price: Optional[fl
     for i in user_stock:
         k = int(i.stocks_amount) * price
         i.suma = round(k, 2)
-        db.session.commit()
+    db.session.commit()
     return stock
 
 
