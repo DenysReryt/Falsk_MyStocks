@@ -81,9 +81,10 @@ class TestStockCrud(unittest.TestCase):
                              'price': 35.55})
 
         mock_db.session.query.return_value.filter_by.return_value.first.return_value = mock_stock
-        mock_user_stock_query.filter_by.return_value.all.return_value = MagicMock(stocks_amount=20)
+        mock_user_stock_query.filter_by.return_value.all.return_value = [MagicMock(stocks_amount=20)]
 
-        updated_stock = update_stock(1, amount=100, price=50)
+        with mock_db.session.begin(subtransactions=True):
+            updated_stock = update_stock(1, amount=100, price=50)
 
         mock_db.session.commit.assert_called_once()
         for i in mock_user_stock_query.filter_by.return_value.all.return_value:

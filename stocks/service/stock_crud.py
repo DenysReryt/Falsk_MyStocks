@@ -40,6 +40,8 @@ def update_stock(stock_id: int, amount: Optional[int] = None, price: Optional[fl
         Update a stock in the database by its ID.
     """
     stock = Stock.query.filter_by(id=stock_id).first()
+    if stock is None:
+        return None
     if amount is not None:
         stock.amount = amount
     if price is not None:
