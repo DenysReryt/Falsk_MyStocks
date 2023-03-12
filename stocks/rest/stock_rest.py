@@ -16,9 +16,7 @@ class StockListRes(Resource):
 
     def get(self) -> Tuple[Any, int]:
         """Get a list of all stocks"""
-        price_min = request.args.get('price_min')
-        price_max = request.args.get('price_max')
-        stocks = stock_crud.get_all_stocks(price_min=price_min, price_max=price_max)
+        stocks = stock_crud.get_all_stocks()
         stocks_list = [stock.to_dict() for stock in stocks]
         json_str = json.dumps(stocks_list)
         return json.loads(json_str), 200
@@ -68,6 +66,6 @@ class StockRes(Resource):
     def delete(self, stock_id: int) -> Tuple[Dict[str, str], int]:
         """Delete a stock by ID"""
         deleted = stock_crud.delete_stock(stock_id=stock_id)
-        if deleted == 0:
+        if deleted is False:
             return {'message': 'Stock not found'}, 404
         return {'message': 'Successfully deleted'}, 201

@@ -85,6 +85,6 @@ class UserRes(Resource):
             Delete a user.
         """
         deleted = user_crud.delete_user(user_id=user_id)
-        if deleted == 0:
+        if deleted is False:
             return {'message': 'User not found'}, 404
-        return {'message': 'Successfully deleted'}, 201
+        return {'message': 'Successfully deleted'}, 204

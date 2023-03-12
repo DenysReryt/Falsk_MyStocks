@@ -14,7 +14,6 @@ def create_user_stock(stock_id: int, suma: float, user_id: int, company: str, st
     user_stock = UserStock(stock_id=stock_id, suma=suma, user_id=user_id, company=company,
                            stocks_amount=stocks_amount)
     db.session.add(user_stock)
-    db.session.commit()
     users = UserStock.query.filter_by(user_id=user_id).all()
     k = 0
     for i in users:
@@ -32,7 +31,7 @@ def get_user_stock(user_id: int, stock_id: int) -> Optional[UserStock]:
 
 def delete_stock(user_stock_id: int, stock_id: int, user_id: int) -> int:
     """Delete a user stock."""
-    query = UserStock.query.filter_by(id=user_stock_id).first()
+    query = UserStock.query.filter_by(user_id=user_id, stock_id=stock_id, id=user_stock_id).first()
     if not query:
         return False
     stock = Stock.query.filter_by(id=stock_id).first()

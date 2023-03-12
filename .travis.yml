@@ -17,7 +17,7 @@ before_script:
 script:
   - pylint stocks/
   - flask --app=stocks.main:app db upgrade --directory stocks/migrations
-#  - coverage run -m pytest && coverage report
+  - coverage run -m pytest && coverage report
 
 after_script:
   - pkill gunicorn
