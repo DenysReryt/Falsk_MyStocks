@@ -76,7 +76,6 @@ class TestStockCrud(unittest.TestCase):
     @patch('stocks.service.stock_crud.db')
     @patch('stocks.service.stock_crud.UserStock.query')
     def test_update_stock(self, mock_user_stock_query, mock_db):
-        mock_db.session.commit.return_value = None
         mock_stock = MagicMock()
         mock_stock.id = 1
         mock_stock.amount = 1000
