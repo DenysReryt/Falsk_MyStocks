@@ -80,8 +80,8 @@ class TestStockCrud(unittest.TestCase):
         mock_stock.id = 1
         mock_stock.amount = 1000
         mock_stock.price = 35.55
-        mock_db.session.query.return_value.filter_by.return_value.first.return_value = mock_stock
-        mock_user_stock_query.filter_by.return_value.all.return_value = [MagicMock(stocks_amount=20)]
+
+        mock_user_stock_query.filter_by.return_value.first.return_value = MagicMock(id=1)
 
         updated_stock = update_stock(1, amount=100, price=50)
 
