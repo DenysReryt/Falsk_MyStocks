@@ -74,7 +74,7 @@ class TestStockRes(unittest.TestCase):
     @patch('stocks.rest.stock_rest.stock_crud.update_stock')
     def test_put_updates_existing_stock(self, mock_update_stock):
         with app.test_request_context(
-                json={'company': 'Amazon', 'sector': 'Technology', 'amount': 1000, 'price': 173.12}):
+                json={'company': 'Amazon', 'amount': 1000, 'price': 173.12}):
             mock_stock = Stock(id=1, company='Amazon', sector='Technology', amount=1000, price=35.55)
             mock_update_stock.return_value = mock_stock
 

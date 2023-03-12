@@ -76,12 +76,12 @@ class TestStockCrud(unittest.TestCase):
     @patch('stocks.service.stock_crud.db')
     @patch('stocks.service.stock_crud.UserStock.query')
     def test_update_stock(self, mock_user_stock_query, mock_db):
-        mock_stock = MagicMock()
-        mock_stock.id = 1
-        mock_stock.amount = 1000
-        mock_stock.price = 35.55
+        mock_stock = MagicMock(
+            to_dict=lambda: {'id': 1, 'company': 'Amazon', 'sector': 'Technology', 'amount': 1000,
+                             'price': 35.55})
 
-        mock_user_stock_query.filter_by.return_value.first.return_value = MagicMock(id=1)
+        mock_db.session.query.return_value.filter_by.return_value.first.return_value = mock_stock
+        mock_user_stock_query.filter_by.return_value.all.return_value = MagicMock(stocks_amount=20)
 
         updated_stock = update_stock(1, amount=100, price=50)
 
