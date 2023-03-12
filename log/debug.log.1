@@ -1,2 +1,50 @@
-2023-03-11 03:55:38,970 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-11 03:55:39,011 - urllib3.connectionpool - DEBUG - http://localhost:5000 "PUT /api/stocks/1 HTTP/1.1" 200 99
+2023-03-12 12:59:46,402 - stocks.main - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/root/PycharmProjects/Falsk (MyStocks)/stocks/views/user_routes.py", line 19, in list_users
+    return render_template('users.html', users=response)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/root/PycharmProjects/Falsk (MyStocks)/stocks/templates/users.html", line 50, in top-level template code
+    <td><a class="link" href="{{ url_for('users_stocks.list_user_stocks', user_id=user.id) }}">{{
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 915, in build
+    rv = self._partial_build(endpoint, values, method, append_unknown)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 794, in _partial_build
+    rv = self._partial_build(
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 807, in _partial_build
+    build_rv = rule.build(values, append_unknown)
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/rules.py", line 826, in build
+    return self._build_unknown(**values)
+  File "<werkzeug routing>", line 1, in <builder:'/users/stocks/<int:user_id>'>
+  File "/root/PycharmProjects/Falsk (MyStocks)/venv/lib/python3.8/site-packages/werkzeug/routing/converters.py", line 156, in to_url
+    value = str(self.num_convert(value))
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'id'
+2023-03-12 13:01:04,503 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:04,525 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-12 13:01:07,616 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:07,619 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-12 13:01:15,721 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:15,734 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-12 13:01:17,411 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:17,414 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-03-12 13:01:18,125 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:18,135 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/2 HTTP/1.1" 200 214
+2023-03-12 13:01:18,136 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-03-12 13:01:18,141 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 189

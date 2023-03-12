@@ -42,6 +42,6 @@ def delete_user(user_id: int) -> int:
     """Delete an existing User."""
     user = User.query.filter_by(id=user_id).first()
     if not user:
-        return 0
+        return False
     db.session.delete(user)
     db.session.commit()
