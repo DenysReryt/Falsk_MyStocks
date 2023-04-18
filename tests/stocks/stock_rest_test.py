@@ -1,5 +1,5 @@
-import unittest
-from unittest.mock import patch, Mock
+import unittest, json
+from unittest.mock import patch, MagicMock
 from stocks.rest.stock_rest import StockRes, StockListRes
 from stocks.models.models import Stock
 from stocks.main import app
@@ -73,6 +73,7 @@ class TestStockRes(unittest.TestCase):
         self.assertEqual(response, expected_json)
         self.assertEqual(status_code, 200)
 
+
     @patch('stocks.rest.stock_rest.stock_crud.update_stock')
     def test_put_updates_existing_stock(self, mock_update_stock):
         with app.test_request_context(
@@ -80,7 +81,7 @@ class TestStockRes(unittest.TestCase):
             mock_stock = Stock(id=1, company='Amazon', sector='Technology', amount=1000, price=35.55)
             mock_update_stock.return_value = mock_stock
 
-            response, status_code = StockRes().put(stock_id=1), 200
+            response, status_code = StockRes().put(stock_id=1)
 
             expected_json = {
                 'id': 1,
@@ -91,7 +92,7 @@ class TestStockRes(unittest.TestCase):
             }
 
             self.assertEqual(response, expected_json)
-            self.assertEqual(status_code, 404)
+            self.assertEqual(status_code, 200)
 
     @patch('stocks.rest.stock_rest.stock_crud.delete_stock')
     def test_delete_existing_stock(self, mock_delete_stock):
