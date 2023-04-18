@@ -4,3 +4,5 @@
 2023-04-10 14:21:19,853 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 277
 2023-04-10 14:21:21,882 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
 2023-04-10 14:21:21,885 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 592
+2023-04-18 14:01:29,377 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-04-18 14:01:29,405 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 277

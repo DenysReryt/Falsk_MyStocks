@@ -77,17 +77,17 @@ class TestStockRes(unittest.TestCase):
     def test_put_updates_existing_stock(self, mock_update_stock):
         with app.test_request_context(
                 json={'company': 'Amazon', 'amount': 1000, 'price': 173.12}):
-            mock_stock = Stock(id=1, company='Amazon', sector='Technology', amount=1000, price=35.55)
+            mock_stock = Stock(id=4, company='Amazon', sector='Technology', amount=50, price=32.0)
             mock_update_stock.return_value = mock_stock
 
-            response, status_code = StockRes().put(1), 200
+            response, status_code = StockRes().put(stock_id=1), 200
 
             expected_json = {
-                'id': 1,
+                'id': 4,
                 'company': 'Amazon',
                 'sector': 'Technology',
-                "amount": 1000,
-                "price": 35.55
+                "amount": 50,
+                "price": 32.0
             }
 
             self.assertEqual(response, expected_json)
