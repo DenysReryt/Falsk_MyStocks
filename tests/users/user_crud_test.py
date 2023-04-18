@@ -70,6 +70,7 @@ class TestUserCrud(unittest.TestCase):
         mock_db.session.query.return_value.filter_by.return_value.first.return_value = mock_user
 
         updated_user = update_user(1, first_name='Bob', last_name='Doe', phone='5555555555')
+        mock_db.session.commit()
 
         mock_db.session.commit.assert_called_once()
         self.assertEqual(updated_user.id, 1)
