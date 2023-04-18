@@ -56,7 +56,7 @@ class StockRes(Resource):
         price = data.get('price')
         current_amount = stock_crud.get_stock(stock_id=stock_id)
         if current_amount is None:
-            return {'message': 'Stock not found'}
+            return {'message': 'Stock not found'}, 404
         json_str_amount = current_amount.to_dict()
         total = json_str_amount['amount'] + int(amount)
         stock = stock_crud.update_stock(stock_id=stock_id, amount=total, price=price)

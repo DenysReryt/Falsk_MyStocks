@@ -77,21 +77,21 @@ class TestStockRes(unittest.TestCase):
     def test_put_updates_existing_stock(self, mock_update_stock):
         with app.test_request_context(
                 json={'company': 'Amazon', 'amount': 1000, 'price': 173.12}):
-            mock_stock = Stock(id=4, company='Amazon', sector='Technology', amount=50, price=32.0)
+            mock_stock = Stock(id=1, company='Amazon', sector='Technology', amount=1000, price=35.55)
             mock_update_stock.return_value = mock_stock
 
             response, status_code = StockRes().put(stock_id=1), 200
 
             expected_json = {
-                'id': 4,
+                'id': 1,
                 'company': 'Amazon',
                 'sector': 'Technology',
-                "amount": 50,
-                "price": 32.0
+                "amount": 1000,
+                "price": 35.55
             }
 
             self.assertEqual(response, expected_json)
-            self.assertEqual(status_code, 200)
+            self.assertEqual(status_code, 404)
 
     @patch('stocks.rest.stock_rest.stock_crud.delete_stock')
     def test_delete_existing_stock(self, mock_delete_stock):
