@@ -74,7 +74,7 @@ class TestUserCrud(unittest.TestCase):
 
         # Assert that the mock session's commit method was called once
         mock_session.commit.assert_called_once()
-        self.assertIsNotNone(updated_user)
+        self.assertIsNotNone(User.query.filter_by(id=1).first())
         # Assert that the returned User object has the expected values
         self.assertEqual(updated_user.id, 1)
         self.assertEqual(updated_user.first_name, 'Bob')
