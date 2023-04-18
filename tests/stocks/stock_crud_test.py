@@ -88,7 +88,7 @@ class TestStockCrud(unittest.TestCase):
             for user_stock in mock_user_stock_query.filter_by.return_value.all.return_value:
                 k = int(user_stock.stocks_amount) * 50
                 user_stock.suma = round(k, 2)
-            mock_db.session.commit()
+            # mock_db.session.commit()
 
         self.assertEqual(updated_stock.amount, 100)
         self.assertEqual(updated_stock.price, 50)

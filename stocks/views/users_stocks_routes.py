@@ -3,7 +3,7 @@ from flask import render_template, Blueprint, redirect, request, url_for, flash
 import requests
 
 user_stock_bp = Blueprint('users_stocks', __name__, url_prefix='/users/stocks')
-BASE_URL = 'http://localhost:5000/api/users/stocks'
+BASE_URL = 'http://localhost:5000/api/users/stocks'                                     #users_stocks
 headers = {'Content-Type': 'application/json'}
 
 

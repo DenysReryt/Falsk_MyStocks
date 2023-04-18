@@ -35,7 +35,7 @@ app = Flask(__name__)
 # Set the secret key of the Flask app for sessions and cookies
 app.secret_key = settings.SECRET_KEY
 
-# Create a Flask-RESTful API instance
+# Create a Flask-RESTFul API instance
 api = Api(app)
 
 # Set up the SQLAlchemy connection to the database

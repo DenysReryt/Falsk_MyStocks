@@ -1,57 +1,6 @@
-2023-03-13 02:28:17,487 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:17] "GET /api/users HTTP/1.1" 200 -
-2023-03-13 02:28:17,488 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
-2023-03-13 02:28:17,489 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:17] "GET /users?user_id=24 HTTP/1.1" 200 -
-2023-03-13 02:28:17,797 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:17] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:23,151 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:23,156 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:23] "GET /api/users/stocks/1 HTTP/1.1" 200 -
-2023-03-13 02:28:23,156 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 323
-2023-03-13 02:28:23,158 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:23,161 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:23] "GET /api/stocks HTTP/1.1" 200 -
-2023-03-13 02:28:23,162 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 187
-2023-03-13 02:28:23,164 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:23] "GET /users/stocks/1 HTTP/1.1" 200 -
-2023-03-13 02:28:23,208 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:23] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:24,473 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:24,479 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:24] "GET /api/users HTTP/1.1" 200 -
-2023-03-13 02:28:24,479 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
-2023-03-13 02:28:24,481 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:24] "GET /users?user_id=1 HTTP/1.1" 200 -
-2023-03-13 02:28:24,778 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:24] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:28,459 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:28] "GET / HTTP/1.1" 200 -
-2023-03-13 02:28:28,509 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:28] "[36mGET /static/home.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:29,283 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:29,286 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:29] "GET /api/stocks HTTP/1.1" 200 -
-2023-03-13 02:28:29,286 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 187
-2023-03-13 02:28:29,287 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:29] "GET /stocks HTTP/1.1" 200 -
-2023-03-13 02:28:29,590 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:29] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:41,105 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:41,323 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:41] "PUT /api/stocks/1 HTTP/1.1" 200 -
-2023-03-13 02:28:41,323 - urllib3.connectionpool - DEBUG - http://localhost:5000 "PUT /api/stocks/1 HTTP/1.1" 200 99
-2023-03-13 02:28:41,327 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:41] "[32mPOST /stocks/1 HTTP/1.1[0m" 302 -
-2023-03-13 02:28:41,342 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:41,349 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:41] "GET /api/stocks HTTP/1.1" 200 -
-2023-03-13 02:28:41,350 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 190
-2023-03-13 02:28:41,353 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:41] "GET /stocks HTTP/1.1" 200 -
-2023-03-13 02:28:41,422 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:41] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:44,022 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:44] "GET / HTTP/1.1" 200 -
-2023-03-13 02:28:44,070 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:44] "[36mGET /static/home.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:44,996 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:45,005 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:45] "GET /api/users HTTP/1.1" 200 -
-2023-03-13 02:28:45,006 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
-2023-03-13 02:28:45,009 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:45] "GET /users HTTP/1.1" 200 -
-2023-03-13 02:28:45,311 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:45] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:46,585 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:46,591 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:46] "GET /api/users/stocks/1 HTTP/1.1" 200 -
-2023-03-13 02:28:46,592 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 327
-2023-03-13 02:28:46,596 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:46,602 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:46] "GET /api/stocks HTTP/1.1" 200 -
-2023-03-13 02:28:46,603 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 190
-2023-03-13 02:28:46,605 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:46] "GET /users/stocks/1 HTTP/1.1" 200 -
-2023-03-13 02:28:46,645 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:46] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:28:48,659 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:28:48,662 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:48] "GET /api/users HTTP/1.1" 200 -
-2023-03-13 02:28:48,663 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
-2023-03-13 02:28:48,664 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:48] "GET /users?user_id=1 HTTP/1.1" 200 -
-2023-03-13 02:28:48,968 - werkzeug - INFO - 127.0.0.1 - - [13/Mar/2023 02:28:48] "[36mGET /static/index.css HTTP/1.1[0m" 304 -
-2023-03-13 02:29:11,987 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:29:12,003 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
-2023-03-13 02:29:14,706 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
-2023-03-13 02:29:14,717 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 448
+2023-04-10 14:21:19,842 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-04-10 14:21:19,849 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users/stocks/1 HTTP/1.1" 200 328
+2023-04-10 14:21:19,850 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-04-10 14:21:19,853 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/stocks HTTP/1.1" 200 277
+2023-04-10 14:21:21,882 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:5000
+2023-04-10 14:21:21,885 - urllib3.connectionpool - DEBUG - http://localhost:5000 "GET /api/users HTTP/1.1" 200 592
