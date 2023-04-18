@@ -35,7 +35,7 @@ def create_stock(company: str, sector: str, amount: int, price: float) -> Option
     return stock
 
 
-def update_stock(stock_id: int, amount: Optional[int] = None, price: Optional[float] = None) -> Optional[Stock]:
+def update_stock(stock_id: int, amount: int, price: float) -> Optional[Stock]:
     """
         Update a stock in the database by its ID.
     """
