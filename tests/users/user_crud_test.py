@@ -47,17 +47,40 @@ class TestUserCrud(unittest.TestCase):
         self.assertEqual(user, self.user1)
 
     @patch('stocks.service.user_crud.db')
-    def test_create_user(self, mock_db):
-        mock_db.session.add.return_value = MagicMock()
-        mock_db.session.commit.return_value = None
+    def test_update_user(self, mock_db):
+        # Create a mock user object to be returned by the query
+        mock_user = MagicMock()
+        mock_db.session.query.return_value.filter_by.return_value.first.return_value = mock_user
 
-        user = create_user('Bob', 'Smith', '5555555555')
+        # Call the function to update the user
+        updated_user = update_user(user_id=1, first_name='John', last_name='Doe', phone='1234567890')
 
-        mock_db.session.add.assert_called_once()
+        # Assert that the query was called with the correct arguments
+        mock_db.session.query.assert_called_once_with(User)
+        mock_db.session.query.return_value.filter_by.assert_called_once_with(id=1)
+        mock_db.session.query.return_value.filter_by.return_value.first.assert_called_once()
+
+        # Assert that the user object was updated with the new values
+        mock_user.first_name.assert_called_once_with('John')
+        mock_user.last_name.assert_called_once_with('Doe')
+        mock_user.phone.assert_called_once_with('1234567890')
+
+        # Assert that the session was committed
         mock_db.session.commit.assert_called_once()
-        self.assertEqual(user.first_name, 'Bob')
-        self.assertEqual(user.last_name, 'Smith')
-        self.assertEqual(user.phone, '5555555555')
+
+        # Assert that the updated user object was returned
+        self.assertEqual(updated_user, mock_user)
+    # def test_create_user(self, mock_db):
+    #     mock_db.session.add.return_value = MagicMock()
+    #     mock_db.session.commit.return_value = None
+    #
+    #     user = create_user('Bob', 'Smith', '5555555555')
+    #
+    #     mock_db.session.add.assert_called_once()
+    #     mock_db.session.commit.assert_called_once()
+    #     self.assertEqual(user.first_name, 'Bob')
+    #     self.assertEqual(user.last_name, 'Smith')
+    #     self.assertEqual(user.phone, '5555555555')
 
 
     @patch('stocks.service.user_crud.db')
