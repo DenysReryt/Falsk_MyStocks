@@ -84,6 +84,7 @@ class TestStockRes(unittest.TestCase):
             response, status_code = StockRes().put(stock_id=1)
 
             expected_json = {
+                'message': 'Stock not found',
                 'id': 1,
                 'company': 'Amazon',
                 'sector': 'Technology',
